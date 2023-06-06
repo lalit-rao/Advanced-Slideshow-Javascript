@@ -1,6 +1,6 @@
 (function () {
-   var currentImage = 0;
-   var myPhotos = ['./images/image1.jpg', './images/image2.jpg', "./images/image3.jpg", './images/image4.jpg', './images/image5.jpg'];
+    var currentImage = 0;
+    var myPhotos = ['image1.jpg', 'image2.jpg', "image3.jpg", 'image4.jpg', 'image5.jpg'];
 
     var container = document.getElementById('content');
     var nextBtn = document.getElementById('next');
@@ -11,11 +11,11 @@
         currentImage++;
         if (currentImage > myPhotos.length - 1) {
             currentImage = 0;
-        };
+        }
         const newSlide = document.createElement('img');
-        newSlide.src = `./images/${myPhotos[currentImage]}`;
-            newSlide.className = 'fadeinimg';
-            container.appendChild(newSlide);
+        newSlide.src = `${myPhotos[currentImage]}`;
+        newSlide.className = 'fadeinimg';
+        container.appendChild(newSlide);
 
     })
 
@@ -25,5 +25,9 @@
         if (currentImage < 0) {
             currentImage = myPhotos.length - 1;
         }
+        const newSlide = document.createElement('img');
+        newSlide.src = `${myPhotos[currentImage]}`;
+        newSlide.className = 'fadeinimg';
+        container.appendChild(newSlide);
     })
 })()
